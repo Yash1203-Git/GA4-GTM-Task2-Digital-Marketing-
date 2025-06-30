@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Digital Marketing Agency</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8; /* Light gray background */
+            color: #333;
+        }
+        .contact-form-container {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db; /* Gray 300 */
+            border-radius: 0.375rem; /* Rounded corners */
+            margin-bottom: 1rem;
+            box-sizing: border-box; /* Include padding in width */
+        }
+        .form-textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            min-height: 120px;
+            box-sizing: border-box;
+        }
+        .btn-submit {
+            background-color: #6366f1; /* Indigo 500 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #4f46e5; /* Indigo 600 */
+        }
+        .nav-link {
+            color: #6366f1; /* Indigo 500 */
+            transition: color 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #4f46e5; /* Indigo 600 */
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+    <!-- Header for Contact Us Page -->
+    <header class="bg-white shadow-md py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">
+                <span class="text-indigo-600">Digital</span>Agency
+            </a>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="index.html" class="nav-link font-semibold">Home</a></li>
+                    <li><a href="services.html" class="nav-link font-semibold">Services</a></li>
+                    <li><a href="contact.html" class="nav-link font-semibold">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contact Section -->
+    <section class="py-16 md:py-24 flex-grow flex items-center justify-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Get in Touch</h2>
+
+            <div class="max-w-3xl mx-auto contact-form-container p-8 md:p-12">
+                <p class="text-center text-gray-600 mb-8">
+                    Have questions or ready to start your next project? Fill out the form below or reach out to us directly.
+                </p>
+
+                <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="md:col-span-1">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                        <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+                    </div>
+                    <div class="md:col-span-1">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="subject" class="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                        <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject of your inquiry" required>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" class="form-textarea" placeholder="Tell us about your project or question..." required></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit" class="btn-submit">Send Message</button>
+                    </div>
+                </form>
+
+                <div class="mt-12 text-center text-gray-700">
+                    <h3 class="text-2xl font-semibold mb-4">Our Contact Details</h3>
+                    <p class="mb-2"><strong>Email:</strong> info@digitalagency.com</p>
+                    <p class="mb-2"><strong>Phone:</strong> +1 (555) 123-4567</p>
+                    <p class="mb-2"><strong>Address:</strong> 123 Digital Blvd, Suite 456, Marketing City, DM 78901</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer for Contact Us Page -->
+    <footer class="bg-gray-800 text-white py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 DigitalAgency. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent actual form submission
+            // In a real application, you'd send this data to a server.
+            // For simulation, we'll just show a success message.
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // Simple validation
+            if (name && email && subject && message) {
+                alert(`Thank you, ${name}! Your message has been received. We will get back to you shortly.`);
+                // Clear the form
+                document.getElementById('contactForm').reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>
